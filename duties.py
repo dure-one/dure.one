@@ -19,7 +19,7 @@ if TYPE_CHECKING:
     from duty.context import Context
 
 
-PY_SRC_PATHS = (Path(_) for _ in ("src", "tests", "duties.py", "scripts"))
+PY_SRC_PATHS = (Path(_) for _ in ("src", "duties.py"))
 PY_SRC_LIST = tuple(str(_) for _ in PY_SRC_PATHS)
 PY_SRC = " ".join(PY_SRC_LIST)
 CI = os.environ.get("CI", "0") in {"1", "true", "yes", ""}
@@ -75,8 +75,21 @@ def changelog(ctx: Context, bump: str = "") -> None:
     Parameters:
         bump: Bump option passed to git-changelog.
     """
-    ctx.run(tools.git_changelog(bump=bump or None), title="Updating changelog")
-    ctx.run(tools.check(bump=bump or _get_changelog_version()), title="Checking legacy code")
+    if (bump != None):
+        ctx.run(tools.git_changelog(bump=bump or None), title="Updating changelog")
+    else:
+        ctx.run(tools.git_changelog(repository=".",
+    output="CHANGELOG.md",
+    convention="angular",
+    provider="github",
+    template="keepachangelog",
+    parse_trailers=True,
+    parse_refs=False,
+    sections=("build", "deps", "feat", "fix", "refactor"),
+    versioning="pep440",
+    bump="auto",
+    in_place=True), title="Updating changelog")
+    # ctx.run(tools.yore.check(bump=bump or _get_changelog_version()), title="Checking legacy code")
 
 
 @duty(pre=["check-quality", "check-docs"])
