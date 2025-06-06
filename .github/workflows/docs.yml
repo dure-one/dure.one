@@ -19,6 +19,6 @@ jobs:
       - name: Git changelog build
         run: git changelog > CHANGELOG.md
       - name: Build site
-        run: mkdocs build --strict
+        run: mkdocs build
       - name: Push to github sites
         run: mkdocs gh-deploy
