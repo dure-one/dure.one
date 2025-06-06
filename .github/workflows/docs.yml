@@ -25,4 +25,4 @@ jobs:
       - name: Build site
         run: mkdocs build
       - name: Push to github sites
-        run: mkdocs gh-deploy
+        run: mkdocs gh-deploy --force --clean
