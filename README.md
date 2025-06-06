@@ -2,12 +2,6 @@
 
 small applications built for small businesses.
 
----
-
-**[Programs](#programs)** 
-
-## Programs
-- [Jangbi](https://jangbi.dure.app)
 
 <!-- 
 ## Used by

@@ -1,3 +1,4 @@
+# Project information
 site_name: "dure-one"
 site_description: "small applications to help small businesses."
 site_url: "https://dure.one/"
@@ -8,88 +9,123 @@ watch: [README.md]
 copyright: Copyright &copy; 2025 Dure.one
 edit_uri: edit/main/docs/
 
+# Documentation and theme
+theme:
+  name: 'material'
+  logo: images/logo.png
+  custom_dir: docs/.overrides
+
+  features:
+    - toc.integrate
+    - toc.follow
+    # navigation tabs multilang doesn't work without insider edition
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - content.tabs.link
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - search.highlight
+    - search.suggest
+
+  palette:
+    ## Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+# Options
+extra:
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  alternate:
+    - name: "English "
+      link: ""
+      lang: en
+    - name: "Korean"
+      link: index.ko/
+      lang: ko
+  generator: false
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/dure-one
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: Let us know how we can improve this page.
+
 validation:
   omitted_files: warn
   absolute_links: warn
   unrecognized_links: warn
-nav:
-  - Home:
-    - Overview: index.md
-    - Changelog: changelog.md
-  - Programs:
-    - jangbi: https://dure.one/jangbi
-    # - buha : https://dure.one/
-    # - suzip : https://dure.one/
-theme:
-  name: material
-  logo: logo.svg
-  custom_dir: docs/.overrides
-  features:
-  - announce.dismiss
-  - content.action.edit
-  - content.action.view
-  - content.code.annotate
-  - content.code.copy
-  - content.tooltips
-  - navigation.footer
-  - navigation.instant.preview
-  - navigation.path
-  - navigation.sections
-  - navigation.tabs
-  - navigation.tabs.sticky
-  - navigation.top
-  - search.highlight
-  - search.suggest
-  - toc.follow
-  palette:
-  - media: "(prefers-color-scheme)"
-    toggle:
-      icon: material/brightness-auto
-      name: Switch to light mode
-  - media: "(prefers-color-scheme: light)"
-    scheme: default
-    primary: teal
-    accent: purple
-    toggle:
-      icon: material/weather-sunny
-      name: Switch to dark mode
-  - media: "(prefers-color-scheme: dark)"
-    scheme: slate
-    primary: black
-    accent: lime
-    toggle:
-      icon: material/weather-night
-      name: Switch to system preference
-# extra_css:
-# - css/style.css
-# - css/material.css
+
+# Google Analytics
+#google_analytics:
+#  - 'UA-XXXXXXXX-X'
+#  - 'auto'
+
+# Extensions
 markdown_extensions:
-  - attr_list
   - admonition
-  # - callouts:
-  #     strip_period: false
-  - footnotes
+  - attr_list
   - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          # format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: "¤"
+  - footnotes
   - pymdownx.highlight:
       pygments_lang_class: true
   - pymdownx.magiclink
+  
   - pymdownx.snippets:
       base_path: [!relative $config_dir]
       check_paths: true
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
+  # - pymdownx.tabbed:
+  #     alternate_style: true
+  #     slugify: !!python/object/apply:pymdownx.slugs.slugify
+  #       kwds:
+  #         case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - toc:
-      permalink: "¤"
 
 plugins:
   - search
@@ -98,7 +134,6 @@ plugins:
       default_handler: shell
   - markdown-exec
   - section-index
-  - coverage
   # - llmstxt:
   #     setions: []
   #     files:
@@ -115,20 +150,50 @@ plugins:
       enabled: false
       plugins:
       - typeset
+  - glightbox
+  - i18n:
+      languages:
+        ko: "Korean"
+        en: "English"
+      default_language: 'en'
+      no_translation:
+        ko: "이 페이지는 아직 영어로 번역되지 않았습니다."
+        en: "This page isn't translated to English yet."
+      translate_nav:
+        ko:
+          "Overview": "개요"
+          "Programs": "프로그램"
+          "Changelog": "변경 로그"
+          "Credits": "크레딧"
 
-extra:
-  social:
-  - icon: fontawesome/brands/github
-    link: https://github.com/dure-one
-  analytics:
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: Let us know how we can improve this page.
+nav:
+  # Korean Tree
+  - index.ko.md
+  - Programs:
+    - programs.ko.md
+  - changelog.ko.md
+  - credits.ko.md
+
+  # English Tree
+  - index.md
+  - Programs:
+    - programs.md
+  - changelog.md
+  - credits.md
+
+  # # User Guide
+  # - User Guide:
+  #     - user/index.md
+  #     - user/index.ko.md
+  #     - Login:
+  #       - login/index.md
+  #       - login/index.ko.md
+  #       - login/local_access.md
+  #       - login/local_access.ko.md
+  #     - Desktops:
+  #       # Quickstart
+  #       - user/create_desktop.md
+  #       - user/create_desktop.ko.md
+  #       # Viewers
+  #       - user/viewers/viewers.md
+  #       - user/viewers/viewers.ko.md

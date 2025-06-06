@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Index
 hide:
 - feedback
 ---
