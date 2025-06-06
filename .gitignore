@@ -6,6 +6,7 @@ lib64
 share
 site
 htmlcov
+tmp
 
 # packaging
 *.egg-info
