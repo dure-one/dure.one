@@ -1,10 +1,5 @@
 # dure-one
 
 small applications built for small businesses.
+we strives for open-source community.
 
-
-<!-- 
-## Used by
-
-*jangbi* is used by well-known companies, projects and scientific teams:
--->

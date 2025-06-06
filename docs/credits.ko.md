@@ -1,5 +1,5 @@
 ---
-title: Credits KO
+title: 사용한 오픈소스
 hide:
 - toc
 ---
