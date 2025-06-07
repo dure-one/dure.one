@@ -54,6 +54,8 @@
     
       <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../css/hide.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -409,6 +411,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#b-mkdocs-gh-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. mkdocs gh-deploy 이용법
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -540,7 +551,10 @@
 <li class="i18n-link i18n-link-found i18n-link-en"><a href="../">English</a></li>
 </ul>
 <h1 id="_1">두레원? 듀어원?<a class="headerlink" href="#_1" title="Permanent link">¤</a></h1>
-<p><a href="./README.md">english</a></p>
+<div class="hide">
+[english](./README.md)
+</div>
+
 <p>아무려면 어떤가요.<br/>
 소기업을위한 프로그램을 만드는 곳입니다.<br/>
 오픈소스를 지향합니다.<br/></p>
@@ -594,32 +608,33 @@ mkdocs가 위의 설정을 읽어서 자동으로 사이트의 메뉴 구성을 
 <h3 id="3">3. 사이트 깃허브로 전송<a class="headerlink" href="#3" title="Permanent link">¤</a></h3>
 <h4 id="a">A. 깃헙 워크플로우 이용법<a class="headerlink" href="#a" title="Permanent link">¤</a></h4>
 <p>문서 편집이 끝나면 깃허브 액션을 이용하거나 mkdocs의 gh-deploy를 이용해서 서버에 전송 할 수 있습니다.</p>
-<p>아래는 깃허브 액션입니다. 깃허브에 푸시를 하면 아래 워크플로우가 실행이 됩니다. 스텝별로 소스를 받아서 깃 히스토리에서 changelog를 자동으로 생성하여 CHANGELOG.md 파일에 저장하고 커밋합니다. 그 후에 gh-deploy로 사이트로 배포합니다.
-<code>markdown: .github/workflows/docs.yml
+<p>아래는 깃허브 액션입니다. 깃허브에 푸시를 하면 아래 워크플로우가 실행이 됩니다. 스텝별로 소스를 받아서 깃 히스토리에서 changelog를 자동으로 생성하여 CHANGELOG.md 파일에 저장하고 커밋합니다. 그 후에 gh-deploy로 사이트로 배포합니다.</p>
+<div class="language-markdown highlight"><pre><span></span><code>&lt;!-- .github/workflows/docs.yml --&gt;
 steps:
-      - name: Download source
+<span class="w">      </span><span class="k">-</span><span class="w"> </span>name: Download source
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install Python
+<span class="w">      </span><span class="k">-</span><span class="w"> </span>name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-      - name: Install dependencies
+          python-version: &#39;3.11&#39;
+<span class="w">      </span><span class="k">-</span><span class="w"> </span>name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Git changelog build
+<span class="w">      </span><span class="k">-</span><span class="w"> </span>name: Git changelog build
         run: git-changelog --provider github &gt; CHANGELOG.md
-      - uses: stefanzweifel/git-auto-commit-action@v5
+<span class="w">      </span><span class="k">-</span><span class="w"> </span>uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Add changelog automatically
-      - name: Build site
+<span class="w">      </span><span class="k">-</span><span class="w"> </span>name: Build site
         run: mkdocs build
-      - name: Push to github sites
+<span class="w">      </span><span class="k">-</span><span class="w"> </span>name: Push to github sites
         run: mkdocs gh-deploy --force --clean****
-<div class="language-text highlight"><pre><span></span><code>#### B. mkdocs gh-deploy 이용법
-위의 구성없이 로컬에서 아래 명령어를 수행하면 깃허브의 리파지토리에 gh-deploy 브랜치로 사이트 컴파일 결과를 전송합니다.
 </code></pre></div>
-$ mkdocs gh-deploy</code></p>
+<h4 id="b-mkdocs-gh-deploy">B. mkdocs gh-deploy 이용법<a class="headerlink" href="#b-mkdocs-gh-deploy" title="Permanent link">¤</a></h4>
+<p>위의 구성없이 로컬에서 아래 명령어를 수행하면 깃허브의 리파지토리에 gh-deploy 브랜치로 사이트 컴파일 결과를 전송합니다.</p>
+<div class="language-markdown highlight"><pre><span></span><code>$ mkdocs gh-deploy
+</code></pre></div>
 <p>이와 같이 하면 mkdocs를 쉽게 이용할 수 있습니다.</p>
 <h3 id="_2">추가로 읽을거리<a class="headerlink" href="#_2" title="Permanent link">¤</a></h3>
 <ul>
