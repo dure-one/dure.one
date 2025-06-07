@@ -322,6 +322,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    개요
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -333,6 +346,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      MKDOCS 사용법
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MKDOCS 사용법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 사이트 환경 구성 및 프로그램 설치
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 사이트 설정 및 편집
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 사이트 깃허브로 전송
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 사이트 깃허브로 전송">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. 깃헙 워크플로우 이용법
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      추가로 읽을거리
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -446,6 +544,89 @@
 <p>아무려면 어떤가요.<br/>
 소기업을위한 프로그램을 만드는 곳입니다.<br/>
 오픈소스를 지향합니다.<br/></p>
+<h2 id="mkdocs">MKDOCS 사용법<a class="headerlink" href="#mkdocs" title="Permanent link">¤</a></h2>
+<p>이 사이트는 mkdocs를 이용해 만들었습니다. mkdocs는 마크다운 형식으로 웹사이트를 쉽게 만들수 있는 툴로 개발자들 사이에서 많이 사용되고 있습니다. 여러개의 테마 중에서 material 테마를 이용하고 있습니다. 이 테마는 <a href="https://squidfunk.github.io/mkdocs-material/insiders/">squidfunk mkdocs insiders</a>에서 인사이더 에디션을 구매할 수 있습니다. 인사이더 에디션은 좀더 많은 기능을 사용할 수 있습니다.</p>
+<p>이 튜토리얼에서는 인사이더 에디션 구매없이 다중언어로 사이트를 구성하는 방법을 알아 봅니다.</p>
+<h3 id="1">1. 사이트 환경 구성 및 프로그램 설치<a class="headerlink" href="#1" title="Permanent link">¤</a></h3>
+<p>사이트를 수정하려면 마크다운을 지원하고 파이썬을 지원하는 에디터가 필요합니다. <a href="https://www.jetbrains.com/ko-kr/fleet/">fleet</a>을 추천합니다. 젯브레인 툴박스를 열어서 fleet를 설치할 수 있습니다.</p>
+<p>파이썬을 설치하고 아래 명령어로 venv환경을 구성합니다.
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dure-one/dure.one.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>dure.one
+$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.
+</code></pre></div></p>
+<p>아래 명령어로 mkdocs 및 필요한 파이썬 패키지를 설치합니다.
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div></p>
+<p>이제 사이트를 한번 띄워봅니다.
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>mkdocs<span class="w"> </span>serve
+</code></pre></div></p>
+<h3 id="2">2. 사이트 설정 및 편집<a class="headerlink" href="#2" title="Permanent link">¤</a></h3>
+<p>원하는 에디터를 이용해서 mkdocs.yml 파일을 수정하고 저장하면 mkdocs데몬이 자동으로 읽어 들여 사이트에 적용해 볼수 있습니다.</p>
+<p>기본정보 설정은 아래와 같습니다. repo_url은 자신이 올릴 사이트의 repository url을 입력합니다.
+<div class="language-text highlight"><pre><span></span><code>site_name: &quot;dure-one&quot;
+site_description: &quot;small applications to help small businesses.&quot;
+site_url: &quot;https://dure.one/&quot;
+repo_url: &quot;https://github.com/dure-one/dure.one&quot;
+repo_name: &quot;dure-one/dure.one&quot;
+site_dir: &quot;site&quot;
+watch: [README.md]
+copyright: Copyright &amp;copy; 2025 Dure.one
+edit_uri: edit/main/docs/
+</code></pre></div></p>
+<p>사이트 네비게이션은 아래와 같이 설정할 수 있습니다.</p>
+<p><div class="language-markdown highlight"><pre><span></span><code><span class="gh"># mkdoc.yml 하단부</span>
+nav:
+  # Korean Tree
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>index.ko.md
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Programs:
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>programs.ko.md
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>changelog.ko.md
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>credits.ko.md
+
+  # English Tree
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>index.md
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Programs:
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>programs.md
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>changelog.md
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>credits.md
+</code></pre></div>
+mkdocs가 위의 설정을 읽어서 자동으로 사이트의 메뉴 구성을 해줍니다.</p>
+<h3 id="3">3. 사이트 깃허브로 전송<a class="headerlink" href="#3" title="Permanent link">¤</a></h3>
+<h4 id="a">A. 깃헙 워크플로우 이용법<a class="headerlink" href="#a" title="Permanent link">¤</a></h4>
+<p>문서 편집이 끝나면 깃허브 액션을 이용하거나 mkdocs의 gh-deploy를 이용해서 서버에 전송 할 수 있습니다.</p>
+<p>아래는 깃허브 액션입니다. 깃허브에 푸시를 하면 아래 워크플로우가 실행이 됩니다. 스텝별로 소스를 받아서 깃 히스토리에서 changelog를 자동으로 생성하여 CHANGELOG.md 파일에 저장하고 커밋합니다. 그 후에 gh-deploy로 사이트로 배포합니다.
+<code>markdown: .github/workflows/docs.yml
+steps:
+      - name: Download source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Git changelog build
+        run: git-changelog --provider github &gt; CHANGELOG.md
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Add changelog automatically
+      - name: Build site
+        run: mkdocs build
+      - name: Push to github sites
+        run: mkdocs gh-deploy --force --clean****
+<div class="language-text highlight"><pre><span></span><code>#### B. mkdocs gh-deploy 이용법
+위의 구성없이 로컬에서 아래 명령어를 수행하면 깃허브의 리파지토리에 gh-deploy 브랜치로 사이트 컴파일 결과를 전송합니다.
+</code></pre></div>
+$ mkdocs gh-deploy</code></p>
+<p>이와 같이 하면 mkdocs를 쉽게 이용할 수 있습니다.</p>
+<h3 id="_2">추가로 읽을거리<a class="headerlink" href="#_2" title="Permanent link">¤</a></h3>
+<ul>
+<li>깃허브 프리는 2000분, 프로는 3000분의 액션 시간을 제공합니다.<a href="https://docs.github.com/ko/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions">[1]</a></li>
+<li>mkdocs-material 인사이더 에디션은 월 $15에 이용할 수 있습니다. <a href="https://squidfunk.github.io/mkdocs-material/insiders/sponsoring-tiers/#the-individual">[2]</a></li>
+<li>깃허브 페이지로 사용자 지정 도메인을 구성 할 수 있습니다.<a href="https://docs.github.com/ko/pages/configuring-a-custom-domain-for-your-github-pages-site">[3]</a></li>
+</ul>
 
 
 
