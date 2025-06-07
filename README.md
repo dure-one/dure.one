@@ -1,5 +1,5 @@
 # dure-one
 
-small applications built for small businesses.
-we strives for open-source community.
+small applications built for small businesses.<br/>
+we strives for open-source community.<br/>
 

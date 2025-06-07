@@ -1,6 +1,6 @@
 # credits
 
-# docs
+# documentations
 
 mkdocs | BSD2 |
 https://github.com/mkdocs/mkdocs

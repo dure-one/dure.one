@@ -6,4 +6,7 @@ hide:
 
 # 프로그램
 
-장비 : 저렴한 firewalla의 대안입니다. 이동성에 중점을 둡니다. 라즈베리파이, 나노파이와 같은 소형 기기에서 실행됩니다. Bookworm 배포판에서만 작동합니다. Debian, Armbian, Dietpi, Rasppi 등 모든 Bookworm 배포판에서 작동합니다.
+장비 : <br/>
+저렴한 firewalla의 대안입니다. 이동성에 중점을 둡니다. <br/>
+라즈베리파이, 나노파이와 같은 소형 기기에서 실행됩니다. <br/>
+Bookworm 배포판에서만 작동합니다. Debian, Armbian, Dietpi, Rasppi 등 모든 Bookworm 배포판에서 작동합니다. <br/>
