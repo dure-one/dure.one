@@ -12,10 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Add changelog automatically ([0435468](https://github.com/dure-one/dure.one/commit/043546851418065f54b6c6c1367cc9b21e4539ac) by nikescar).
+- Add changelog automatically ([33ef3ca](https://github.com/dure-one/dure.one/commit/33ef3ca1d7162f48f213cf09d0f72c95d28ba527) by nikescar).
 
 ### Fixed
 
+- fix: language link ([08faf44](https://github.com/dure-one/dure.one/commit/08faf445cfd0bc4251a4c1f1297cf79c0691b4e7) by Woojae, Park).
 - fix: hiding switch language ([e403620](https://github.com/dure-one/dure.one/commit/e403620db896bd85c92d8da7bf230a52692fb1c0) by Woojae, Park).
 - fix: add history to git changelog, readme fix ([5fd9bc0](https://github.com/dure-one/dure.one/commit/5fd9bc05e8b4e1750756eaf27f15e332123c45d0) by Woojae, Park).
 - fix: credit, 404 page, progrms txt ([648e279](https://github.com/dure-one/dure.one/commit/648e27948ce7317343833ef7351ca0eae29d700a) by Woojae, Park).
