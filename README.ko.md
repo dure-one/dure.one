@@ -1,8 +1,6 @@
 # 두레원? 듀어원?
 
-<div class="hide">
-[english](./README.md)
-</div>
+<a href="./README.md" name="english" class="hide">english</a>
 
 아무려면 어떤가요.<br/>
 소기업을위한 프로그램을 만드는 곳입니다.<br/>
