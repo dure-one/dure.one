@@ -1,6 +1,8 @@
 # 두레원? 듀어원?
 
+<div class="hide">
 [english](./README.md)
+</div>
 
 아무려면 어떤가요.<br/>
 소기업을위한 프로그램을 만드는 곳입니다.<br/>
@@ -75,7 +77,9 @@ mkdocs가 위의 설정을 읽어서 자동으로 사이트의 메뉴 구성을 
 문서 편집이 끝나면 깃허브 액션을 이용하거나 mkdocs의 gh-deploy를 이용해서 서버에 전송 할 수 있습니다.
 
 아래는 깃허브 액션입니다. 깃허브에 푸시를 하면 아래 워크플로우가 실행이 됩니다. 스텝별로 소스를 받아서 깃 히스토리에서 changelog를 자동으로 생성하여 CHANGELOG.md 파일에 저장하고 커밋합니다. 그 후에 gh-deploy로 사이트로 배포합니다.
-```markdown: .github/workflows/docs.yml
+
+```markdown
+<!-- .github/workflows/docs.yml -->
 steps:
       - name: Download source
         uses: actions/checkout@v4
@@ -97,9 +101,11 @@ steps:
       - name: Push to github sites
         run: mkdocs gh-deploy --force --clean****
 ```
+
 #### B. mkdocs gh-deploy 이용법
 위의 구성없이 로컬에서 아래 명령어를 수행하면 깃허브의 리파지토리에 gh-deploy 브랜치로 사이트 컴파일 결과를 전송합니다.
-```
+
+```markdown
 $ mkdocs gh-deploy
 ```
 
