@@ -18,7 +18,7 @@
           "properties": {
             "jangbi": {
               "title": "security enhanced debian/armbian/dietpi configurations.",
-              "markdownDescription": "https://dure.one/jangbi",
+              "markdownDescription": "https://jangbi.dure.one",
               "default": null,
               "format": "path"
             }
