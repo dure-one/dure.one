@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Add changelog automatically ([e947d70](https://github.com/dure-one/dure.one/commit/e947d70bf2033a0a2247c467caafbbb440b69114) by nikescar).
+- Add changelog automatically ([bd57fc9](https://github.com/dure-one/dure.one/commit/bd57fc970edbe8771ec9f2a7931e87a5b1e16f1e) by nikescar).
 
 ### Fixed
 
